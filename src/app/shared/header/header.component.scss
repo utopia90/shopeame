@@ -1,0 +1,91 @@
+
+.logo {
+position: relative;
+width: 1920px;
+height: 30px;
+left: 1px;
+top: 1px;
+display: flex;
+text-align: center;
+}
+.logo-shopeame{
+
+background: linear-gradient(90deg, #2979FF 0%, #4C589E 100%);
+border-radius: 6px;
+align-self: center;
+display: inline-flex;
+position: relative;
+left: 40%;
+top: 32px;
+
+width: 30px;
+height: 27px;
+}
+.shopeame-text{
+position: relative;
+left: 40%;
+top: 32px;
+
+font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: 550;
+font-size: 28px;
+line-height: 36px;
+/* identical to box height, or 100% */
+
+display: flex;
+align-items: center;
+padding-left: 12px;
+
+/* Blue / 100 */
+
+color: #0C2146;
+}
+.navbar {
+position: relative;
+width: 1920px;
+height: 60px;
+top: 60px;
+display: flex;
+flex-direction: row;
+
+background: #FFC970;
+}
+
+.home-span{
+    position: relative;
+    left: 42%;
+}
+
+.navlink{
+font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 143%;
+display: flex;
+padding-right: 20px;
+align-items: center;
+text-align: center;
+position: relative;
+top: 10%;
+right: 15%;
+text-decoration: none;
+font-weight: bold;
+letter-spacing: 0.018em;
+color: #444444;
+}
+.navlink:hover{
+    color: navy;
+}
+.navvector{
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: -15px;
+    left: calc(50% - 20px/2);
+    top: calc(50% - 19.22px/2 - 0.39px);
+    color: #444444;
+}
+.navvector:hover{
+    color: navy;
+}

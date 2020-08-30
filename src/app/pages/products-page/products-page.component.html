@@ -1,0 +1,13 @@
+
+<div class="products-main">
+    <div class="products-container">
+    <h3><strong>Listado de Productos</strong></h3>
+    <div class="products-grid" *ngIf="results">
+        <div class="product-block"  *ngFor="let product of results">
+          <img class="product-img" [src]="product.image" [alt]="product.name">
+          <h4 class="name-product">{{ product.name }} - {{ product.price}}</h4>
+          <h6 class="description-product">{{product.description}}</h6>
+        </div>
+      </div>
+    </div>
+</div>

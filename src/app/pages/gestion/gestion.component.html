@@ -1,0 +1,33 @@
+<div class="gestion-container">
+      <div class="gestion-items">
+        <div class="form-container">
+            <h2 class="gestion-title"><strong>Creación/edicción de productos</strong></h2>
+
+            <label class="label-item"for="name" type="text">Nombre del producto:</label>
+            <input class="input-item" type="text" name="name" [(ngModel)]="newProduct.name" placeholder="Por ej: Tiesto para planta"/>
+
+            <label class="label-item"for="price" type="text">Precio:</label>
+            <input class="input-item" type="text" name="price" [(ngModel)]="newProduct.price" placeholder="Por ej: 9.50"/>
+
+            <label for="description" class="label-item" type="text">Descripción:</label>
+            <input class="input-item" type="text" name="description" [(ngModel)]="newProduct.description"placeholder="Por ej: Lo más vendido este mes"/>
+
+            <label for="imageurl" class="label-item" type="text">Ruta de la imagen:</label>
+            <input class="input-item" type="text" name="imageurl" [(ngModel)]="newProduct.image"placeholder="Por ej: http:www.imagen.jpg"/>
+
+            <label for="opinions" class="label-item" type="text">Opiniones:</label>
+            <input type="text" class="input-item" name="opinions" [(ngModel)]="newProduct.opinions"placeholder="Por ej: 4.28"/>
+            
+            <button class="gestion-btn" type="submit">Guardar</button>
+        </div>
+            <div class="prev-container">
+                <div class="product-display">
+                    <p class="prev-title">Preview del producto:</p>
+                    <h3>{{newProduct.name}} {{newProduct.price}}</h3>
+                    <img class="product-image"src="{{newProduct.image}}"/>
+                    <p>{{newProduct.description}}</p>
+                    <p>{{newProduct.opinions}}</p>
+               </div>
+            </div>
+      </div>
+</div>
