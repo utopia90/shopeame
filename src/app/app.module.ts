@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +16,8 @@ import { ShopeameWelcomeComponent } from './pages/shopeame-welcome/shopeame-welc
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { GestionComponent } from './pages/gestion/gestion.component';
 import { ServiceService } from './service.service';
+import { ProductsLocalServiceService } from './products-local-service.service';
+
 
 
 @NgModule({
@@ -23,15 +28,16 @@ import { ServiceService } from './service.service';
     ShopeamePageComponent,
     ShopeameWelcomeComponent,
     ProductsPageComponent,
-    GestionComponent
+    GestionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule
   ],
-  providers: [ServiceService],
+  providers: [ServiceService, ProductsLocalServiceService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

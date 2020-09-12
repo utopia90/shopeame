@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from './../../../app/service.service';
+import { ProductsLocalServiceService } from './../../products-local-service.service'
 
 
 @Component({
@@ -8,12 +9,20 @@ import { ServiceService } from './../../../app/service.service';
   styleUrls: ['./products-page.component.scss']
 })
 export class ProductsPageComponent implements OnInit {
-  results: any[] = [];
-  constructor(private ServiceService: ServiceService) { }
+   results = [];
+  constructor(private ServiceService: ServiceService, private productsLocalService: ProductsLocalServiceService) { }
   
   ngOnInit(): void {
-    this.ServiceService.getData()
-    .subscribe((data) => {
-     this.results.push(data[0], data[1], data[2], data[3], data[4], data[5], data[6],data[7], data[8]);
-})}}
 
+    const productsLocal = this.productsLocalService.getProducts();
+
+    if(!productsLocal.length){
+    this.ServiceService.getProducts().subscribe((products : any) =>{
+        this.results = products;
+        this.productsLocalService.addProducts(products)
+    })
+  }else{  
+      this.results = productsLocal;
+    }
+  }
+}

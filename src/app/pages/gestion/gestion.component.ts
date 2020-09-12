@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-interface Product {
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-  opinions: string;
-}
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ProductsLocalServiceService } from 'src/app/products-local-service.service';
 
 @Component({
   selector: 'app-gestion',
@@ -13,16 +8,31 @@ interface Product {
   styleUrls: ['./gestion.component.scss']
 })
 export class GestionComponent implements OnInit {
-  newProduct: Product = {
-    name: '',
-    price: undefined,
-    description: '',
-    image: '',
-    opinions: ''
-  }
-  constructor() { }
+  inputName;
+  description;
+  price;
+  stars;
+  imgUrl;
+  
+  FormGroupManagementPage;
+
+  constructor(private FormBuilder: FormBuilder, private productsLocalService: ProductsLocalServiceService) { }
 
   ngOnInit(): void {
-  }
+    this.FormGroupManagementPage = this.FormBuilder.group({
+      name: ['Product'],
+      description: ['Description'],
+      price: ['5'],
+      image: ['https://images-na.ssl-images-amazon.com/images/I/61-ty-pKigL._AC_UX385_.jpg'],
+      stars: ['5'],
+  })
+
+}
+
+addProduct(){
+  this.productsLocalService.addProducts([this.FormGroupManagementPage.value])
+}
+
+
 
 }
